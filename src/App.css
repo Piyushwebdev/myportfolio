@@ -1,38 +1,350 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+:root {
+  --grad-1: rgb(120,94,219);
+  --grad-2: rgb(182,193,76);
+}
+*{
+  color: #d1d1d1;
+  background: #1d1d20;
+  font-family: 'Montserrat', sans-serif;
+}
+.gradient1 {
+  stop-color: var(--grad-1);
+  transition: all .3s ease-in-out;
+}
+.gradient2 {
+  stop-color: var(--grad-2);
+  transition: all .3s ease-in-out;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logoimg:hover{
+  transform: scale(1.2);
+  transition-delay: 25ms;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@media screen and (min-width: 500px)
+{
+  [data-name=corner-bottom-right], [data-name=corner-top-left] {
+    width: 300px;
+    height: 300px;
+    opacity: 1;
+}
+}
+[data-name=corner-top-left] {
+  top: 0;
+  left: 0;
+}
+[data-name=corner-bottom-right], [data-name=corner-top-left] {
+  opacity: 1;
+  width: 100px;
+  height: 100px;
+  transition: all ease-in-out;
+  position: absolute;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+[data-name=corner-bottom-right] {
+  bottom: 0;
+  right: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.main{
+  box-sizing: border-box;
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+    opacity: 1;
+    transition: opacity .2s ease-in-out;
+}
+.main .main-container{
+  max-width: 100vw;
+  height: 100%;
+  max-height: 100vh;
+  box-sizing: border-box;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  display: flex;
+}
+.main-container .main-container-inner{
+  width: 100vw;
+  max-width: 1280px;
+  box-sizing: border-box;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 20px;
+  display: flex;
+  position: relative;
+  max-height: 791px;
+  height: 100vh;
+}
+.main-container .main-container-inner .inner-container {
+  padding: 30px;
+  -webkit-user-select: none;
+  user-select: none;
+  z-index: 2;
+  background: #1d1d20;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+main{
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 50px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+  box-sizing: border-box;
+  min-height: calc(100% - 102px);
+  height: calc(100% - 102px);
+
+  display: flex;
+  transform: translateZ(0);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-projects{
+  flex-basis: 30.9017%;
+}
+
+.main-container .main-container-inner .inner-container header ul a svg{
+  width: 25px;
+  height: 25px;
+  margin-top: -15px;
+  transition: transform .2s ease-in-out;
+  transform: scale(1.01);
+  fill: #777;
+}
+
+.main-container .main-container-inner .inner-container header ul a {
+  color: #ccc;
+  margin-left: 30px;
+  line-height: 1.5;
+  display: flex;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.main-message{
+  position: relative;
+  flex-basis: 53.4752%;
+  flex: 1;
+}
+
+/*-------------WELECOME MESSAGE--------*/
+.main-container .main-container-inner .inner-container main.projects-overview .main-message .welcome-message {
+  transform-origin: 0;
+  opacity: 1;
+  transition: all .2s linear;
+  transform: scaleX(1);
+}
+.main-container .main-container-inner .inner-container .main-message .welcome-message button a:hover {
+  color: #fff;
+  letter-spacing: 1px;
+}
+.main-container .main-container-inner .inner-container .main-message .welcome-message button  {
+  transition: all .3s ease-in-out;
+  display: inline-block;
+  position: relative;
+}
+.main-container .main-container-inner .inner-container .main-message .welcome-message button:before {
+  content: "";
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(270deg,var(--grad-2)0%,var(--grad-1)100%);
+  opacity: 1;
+  transition: all .3s ease-in-out;
+  display: inline-block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+}
+
+.spacer{
+  max-width: 130px;
+  min-width: 90px;
+}
+
+.main-container .main-container-inner .inner-container .main-message .individual-project {
+  transform-origin: 100%;
+  opacity: 0;
+  width: 100%;
+  transition: all .2s linear;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+}
+.main-container .main-container-inner .inner-container main.projects-overview.projects-overview-hide .main-message .individual-project.individual-project-show {
+  opacity: 1;
+  transform: scaleX(1);
+}
+.main-container .main-container-inner .inner-container .main-message span {
+  margin-left: 30px;
+  font-size: .9em;
+  font-weight: 100;
+  line-height: 1.6;
+  display: block;
+  position: relative;
+}
+.main-container .main-container-inner .inner-container .main-message span:before {
+  content: " ";
+  width: 2px;
+  background: linear-gradient(0deg,var(--grad-2)0%,var(--grad-1)100%);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -30px;
+}
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+.main-container .main-container-inner .inner-container .main-message .individual-project h2 {
+  margin-top: 60px;
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 100;
+}
+.main-container .main-container-inner .inner-container main.projects-overview .main-message span:before {
+  content: " ";
+  width: 2px;
+  background: linear-gradient(0deg,var(--grad-2)0%,var(--grad-1)100%);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -30px;
+}
+.main-container .main-container-inner .inner-container main.projects-overview .main-message span:before {
+  content: " ";
+  width: 2px;
+  background: linear-gradient(0deg,var(--grad-2)0%,var(--grad-1)100%);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -30px;
+}
+
+
+.main-container .main-container-inner .inner-container .main-message .individual-project button {
+    border: 0 solid #000;
+    margin-right: 25px;
+    padding: 0;
+    position: relative;
+}
+button, input, optgroup, select, textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  border: 0 solid #000;
+}
+button, input {
+  overflow: visible;
+}
+button, select {
+  text-transform: none;
+}
+/*-----------------PROJECTS------------------*/
+
+.main-container .main-container-inner .inner-container .main-projects h2{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 100;
+}
+.main-container .main-container-inner .inner-container .main-projects div.project-wrapper:before {
+  content: " ";
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(135deg,var(--grad-1)0%,var(--grad-2)50%,var(--grad-1)100%);
+  opacity: 1;
+  border-top-left-radius: 8px;
+  transition: all .3s ease-in-out;
+  position: absolute;
+  top: -2px;
+  bottom: 0;
+  left: -2px;
+}
+.main-container .main-container-inner .inner-containerz .main-projects div.project-wrapper:after {
+  content: " ";
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(135deg,var(--grad-2)0%,var(--grad-1)50%,var(--grad-2)100%);
+  opacity: 0;
+  border-top-left-radius: 8px;
+  transition: all .3s ease-in-out;
+  position: absolute;
+  top: -2px;
+  bottom: 0;
+  left: -2px;
+}
+.main-container .main-container-inner .inner-container .main-projects div.project-wrapper {
+  font-size: 14px;
+  position: relative;
+}
+.main-container .main-container-inner .inner-container .main-projects a{
+  color: #ccc;
+  margin-bottom: 15px;
+  margin-left: 0;
+  padding-bottom: 5px;
+  line-height: 1.5;
+  text-decoration: none;
+  background-color: #0000;
+}
+.main-container .main-container-inner .inner-container .main-projects a:hover {
+  color: #fff;
+  letter-spacing: 1px;
+}
+.main-container .main-container-inner .inner-container .main-projects div.project-wrapper div a span {
+  transition: all .3s ease-in-out;
+  display: inline-block;
+  position: relative;
+}
+.main-container .main-container-inner .inner-container .main-projects div.project-wrapper div a span:before {
+  content: "";
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(270deg,var(--grad-2)0%,var(--grad-1)100%);
+  opacity: 1;
+  transition: all .3s ease-in-out;
+  display: inline-block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+}
+.main-container .main-container-inner .inner-container main.projects-overview .main-projects div.project-wrapper div a span:after{
+  content: "";
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(270deg,var(--grad-1)0%,var(--grad-2)100%);
+  opacity: 0;
+  transition: all .3s ease-in-out;
+  display: inline-block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+}
+
+/*----------------FOOTER---------------------*/
+footer{
+  text-align: right;
+  width: 100%;
+  padding: 35px 0 27px;
+  font-size: 14px;
+  position: relative;
+  display: block;
+  z-index:200;
 }
