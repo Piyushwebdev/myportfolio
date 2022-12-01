@@ -291,7 +291,7 @@ function App() {
                     transform: varId === "quotes" ? "scaleX(1)" : "scaleX(0)",
                   }}
                   id="quotes"
-                  className="individual-project w3-container w3-center w3-animate-right"
+                  className="individual-project w3-container  w3-animate-right"
                   data-link="https://jocular-yeot-732277.netlify.app"
                 >
                   <h2>Quotes Generator</h2>
@@ -334,7 +334,7 @@ function App() {
                     opacity: varId === "password" ? "1" : "0",
                     transform: varId === "password" ? "scaleX(1)" : "scaleX(0)",
                   }}
-                  className="individual-project w3-container w3-center w3-animate-right"
+                  className="individual-project w3-container  w3-animate-right"
                   data-link="https://coruscating-mooncake-ce923c.netlify.app/"
                 >
                   {" "}
@@ -373,13 +373,13 @@ function App() {
                   </span>{" "}
                 </div>
                 {/* ) : varId === "analog" ? ( */}
-                <div
+                {/* <div
                   id="analog"
                   style={{
                     opacity: varId === "analog" ? "1" : "0",
                     transform: varId === "analog" ? "scaleX(1)" : "scaleX(0)",
                   }}
-                  className="individual-project w3-container w3-center w3-animate-right"
+                  className="individual-project w3-container  w3-animate-right"
                   data-link="https://ymzpa5agt9ggzt3h0gytqa.on.drv.tw/Analog/clock.html
                   "
                 >
@@ -418,7 +418,7 @@ function App() {
                       </a>{" "}
                     </button>{" "}
                   </span>{" "}
-                </div>
+                </div> */}
                 {/* ) : varId === "pepsi" ? ( */}
                 <div
                   id="pepsi"
@@ -426,7 +426,7 @@ function App() {
                     opacity: varId === "pepsi" ? "1" : "0",
                     transform: varId === "pepsi" ? "scaleX(1)" : "scaleX(0)",
                   }}
-                  className="individual-project w3-container w3-center w3-animate-right"
+                  className="individual-project w3-container  w3-animate-right"
                   data-link="https://ymzpa5agt9ggzt3h0gytqa.on.drv.tw/coke/cola.html
                   "
                 >
@@ -474,7 +474,7 @@ function App() {
                     transform:
                       varId === "portfolio" ? "scaleX(1)" : "scaleX(0)",
                   }}
-                  className="individual-project w3-container w3-center w3-animate-right"
+                  className="individual-project w3-container  w3-animate-right"
                   data-link="https://piyushwebdev.netlify.app"
                 >
                   {" "}
@@ -550,7 +550,7 @@ function App() {
                       {" "}
                       <span>Password Generator</span>{" "}
                     </button>
-                    <button
+                    {/* <button
                       style={{ textAlign: "start", cursor: "pointer" }}
                       onClick={() => {
                         setVarId("analog");
@@ -558,7 +558,7 @@ function App() {
                     >
                       {" "}
                       <span>Analog Clock</span>{" "}
-                    </button>
+                    </button> */}
                     <button
                       style={{ textAlign: "start", cursor: "pointer" }}
                       onClick={() => {

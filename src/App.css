@@ -474,7 +474,7 @@ footer{
   flex-basis: 100%;
   padding: 15px;
   overflow: hidden;
-  height:98vh;
+  /* height:98vh; */
 }
 .main-container .main-container-inner .inner-container header ul a svg {
   width: 25px;
